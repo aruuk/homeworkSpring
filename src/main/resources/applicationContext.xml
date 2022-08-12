@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+<!--<context:property-placeholder location="application.properties"/>-->
+<!--    <bean id="person" class="org.example.Person">-->
+<!--        <property name="name" value="${person.name}"/>-->
+<!--        <property name="age" value="${person.age}"/>-->
+<!--    </bean>-->
+
+<!--    <bean id="horse" class="org.example.Horse">-->
+<!--        <property name="name" value="${horse.name}"/>-->
+<!--        <property name="age" value="${horse.age}"/>-->
+<!--        <property name="breed" value="${horse.breed}"/>-->
+<!--        <property name="color" value="${horse.color}"/>-->
+<!--    </bean>-->
+
+<!--    <bean id="dog" class="org.example.Dog">-->
+<!--        <property name="name" value="${dog.name}"/>-->
+<!--        <property name="age" value="${dog.age}"/>-->
+<!--        <property name="breed" value="${dog.breed}"/>-->
+<!--        <property name="color" value="${dog.color}"/>-->
+<!--    </bean>-->
+
+    <context:property-placeholder location="application2.properties"/>
+    <bean id="person2" class="person2.Person2">
+        <property name="name2" value="${person2.name}"/>
+        <property name="age2" value="${person2.age}"/>
+    </bean>
+
+    <bean id="cat" class="person2.Cat">
+        <constructor-arg ref="person2"/>
+        <property name="name" value="${cat.name}"/>
+        <property name="breed" value="${cat.breed}"/>
+        <property name="age" value="${cat.age}"/>
+        <property name="color" value="${cat.color}"/>
+    </bean>
+
+    <bean id="lion" class="person2.Lion">
+        <constructor-arg ref="person2"/>
+        <property name="name" value="${lion.name}"/>
+        <property name="age" value="${lion.age}"/>
+        <property name="color" value="${lion.color}"/>
+    </bean>
+</beans>
